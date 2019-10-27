@@ -1,0 +1,155 @@
+body{
+    background-color: #333;
+}
+
+body div{
+    border-color: black;
+}
+
+#road{
+    background-color: rgb(17, 41, 146);
+    width: 500px;
+    height: 10px;
+    margin-top: 300px;
+}    
+
+#bobby{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(172, 39, 39);
+    transform: translateY(-125px);
+    border-radius: 100%;
+    animation: move 1.8s 1;
+    animation-timing-function: ease-in;
+}    
+
+/* EYES */
+
+#bobby .eyes{
+    height: 14px;
+    padding-right: 20px;
+}    
+
+#bobby .eyes>div{
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    float: right;
+    border-radius: 100%;
+    margin: 0 1px;
+    border-left: 2px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}    
+
+/* HANDS */
+
+#bobby>.hands{
+    width: 100px;
+    height: 20px;
+    padding-top: 30px;
+    padding-left: 6px;
+}    
+
+#bobby>.hands>div{
+    width: 10px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(172, 23, 23);
+    float: left;
+    border-bottom: 5px solid #fafafa;
+}    
+
+#bobby>.hands>div:first-child{
+    margin-right: 35px;
+    transform: rotate(-15deg);
+    animation: run 0.25s 9;
+}    
+
+#bobby>.hands>div:last-child{
+    margin-left: 35px;
+    animation-delay: 0.125s;
+    transform: rotate(15deg);
+    animation: run 0.25s 9;
+}    
+
+/* LEGS */
+
+#bobby>.legs{
+    width: 40px;
+    height: 20px;
+    margin-left: 24px;
+    margin-top: 10px;
+    padding-left: 12px;
+    padding-top: 16px;
+}
+
+#bobby>.legs>div{
+    width: 10px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(172, 23, 23);
+    float: left;
+    border-bottom: 5px solid #fafafa;
+}
+
+
+#bobby>.legs>div:first-child{
+    margin-right: 4px;
+    transform: rotate(15deg);
+    animation: run 0.25s 9  ;
+    animation-delay: 0.125s;
+}
+
+#bobby>.legs>div:last-child{
+    margin-left: 4px;
+    transform: rotate(-15deg);
+    animation: run 0.25s 9  ;
+}
+
+
+@keyframes run{
+    from{
+        transform: rotate(-15deg);
+    }
+    to{
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes move{
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left: 500px;
+    }
+}
+
+@keyframes tilt{
+    from{
+        transform: translateY(-2px);
+    }
+    to{
+        transform: translateY(3px);
+    }
+}
+
+@keyframes falldown{
+    from{
+        transform:translateY(0px) translateX(500px);
+    }
+    to{
+        transform:translateY(600px) translateX(580px);
+    }
+}
+
+#bobby-wrapper{
+    animation: tilt 0.12s 18;  
+}
+    
+#bobby-falldown{
+    animation: falldown 0.7s 1;
+    animation-timing-function: ease-out;
+    animation-delay: 1.8s;
+}
